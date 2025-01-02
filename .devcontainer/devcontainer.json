@@ -28,5 +28,8 @@
     }
   },
   "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm config set enable-pre-post-scripts true && pnpm install",
-  "remoteUser": "node"
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+  ]
 }
